@@ -51,7 +51,7 @@ export const dashboardApi = {
   getEmployee: () => api.get('/dashboard/employee'),
   getManager: () => api.get('/dashboard/manager'),
   getAdmin: () => api.get('/dashboard/admin'),
-  getDailyReport: () => api.get('/dashboard/reports/daily'),
+  getDailyReport: (date) => api.get('/dashboard/reports/daily', { params: { date } }),
   getDateRangeReport: (startDate, endDate) => api.get('/dashboard/reports/range', { params: { startDate, endDate } }),
   getOvertimeReport: () => api.get('/dashboard/reports/overtime'),
 };

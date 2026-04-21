@@ -15,7 +15,7 @@ const AdminAttendance = () => {
 
   useEffect(() => {
     if (date) {
-      dashboardApi.getDailyReport()
+      dashboardApi.getDailyReport(date)
         .then(res => setReportData(res.data?.data || []))
         .catch(err => console.error(err))
         .finally(() => setIsLoading(false));
