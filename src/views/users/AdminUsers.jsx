@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { userApi } from '../../features/api/api';
+import { Link } from 'react-router-dom';
 
 const AdminUsers = () => {
   const [page, setPage] = useState(1);
@@ -177,13 +178,13 @@ const AdminUsers = () => {
                         <td>{user.departmentName || '—'}</td>
                         <td>
                           <div className="btn-group btn-group-sm">
-                            <a
-                              href={`/admin/users/${user._id}`}
+                            <Link
+                              to={`/admin/users/${user._id}`}
                               className="btn btn-outline-info"
                               title="View Profile & Attendance"
                             >
                               <i className="bi bi-eye"></i>
-                            </a>
+                            </Link>
                             <button
                               className="btn btn-outline-warning"
                               onClick={() => openRoleModal(user)}

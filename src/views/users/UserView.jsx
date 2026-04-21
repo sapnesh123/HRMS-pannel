@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { userApi, attendanceApi } from '../../features/api/api';
 import { selectCurrentRole } from '../../features/auth/authSlice';
@@ -186,12 +186,12 @@ const UserView = () => {
               {role === 'admin' && (
                 <div className="col-md-4 text-end">
                   <div className="d-grid gap-2" style={{ maxWidth: '200px', marginLeft: 'auto' }}>
-                    <a href={`/admin/users/${user._id}/edit`} className="btn btn-outline-primary">
+                    <Link to={`/admin/users/${user._id}/edit`} className="btn btn-outline-primary">
                       <i className="bi bi-pencil me-2"></i>Edit Profile
-                    </a>
-                    <a href={`/admin/users/${user._id}/leaves`} className="btn btn-outline-warning">
+                    </Link>
+                    <Link to={`/admin/users/${user._id}/leaves`} className="btn btn-outline-warning">
                       <i className="bi bi-calendar-x me-2"></i>View Leaves
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
